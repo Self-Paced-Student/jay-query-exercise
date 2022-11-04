@@ -1,10 +1,11 @@
 {
   "name": "codeworks-jay-query-exercise",
-  "version": "1.5.5",
+  "version": "1.5.6",
   "description": "A Codeworks exercise to train students",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test:ci": "mocha test --reporter mocha-junit-reporter"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "jsdom": "^19.0.0",
     "jsdom-global": "^3.0.2",
     "mocha": "^9.1.4",
+    "mocha-junit-reporter": "^2.0.2",
     "stylelint": "13.13.1",
     "stylelint-config-standard": "^22.0.0"
   },
