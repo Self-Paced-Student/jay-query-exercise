@@ -2,7 +2,7 @@
 
 JayQuery is your mini version of the popular [jQuery](http://jquery.com/) library. Like its well known sister, it’s accessible through a reserved global variable: `J$`.
 
-The `J$()` function takes a CSS selector (string) as an argument, and should return a collection (array) of all matched DOM elements.
+The `J$()` function takes a CSS selector (string) as an argument, and should return a collection of all matched DOM elements.
 
 This function should have a [`.ready()`](https://api.jquery.com/ready/) method.
 
