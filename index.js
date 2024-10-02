@@ -35,6 +35,33 @@ methods.removeClass = function (className) {
   return this;
 };
 
+methods.toggleClass = function (className) {
+  loop(this, function (el) {
+    el.classList.toggle(className);
+  });
+  return this;
+};
+
+methods.hide = function () {
+  loop(this, function (el) {
+    const computedDisplay = window.getComputedStyle(el).display;
+    if (computedDisplay !== 'none') {
+      el.dataDisplay = computedDisplay;
+      el.style.display = 'none';
+    }
+  });
+};
+
+methods.show = function () {
+  loop(this, function (el) {
+    const computedDisplay = window.getComputedStyle(el).display;
+    if (computedDisplay === 'none') {
+      el.style.display = el.dataDisplay || 'inline';
+      delete el.dataDisplay;
+    }
+  });
+};
+
 
 // Allow tests to run on the server (leave at the bottom)
 if (typeof window === 'undefined') {
