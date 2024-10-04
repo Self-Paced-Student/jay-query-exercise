@@ -70,6 +70,34 @@ methods.toggle = function () {
   });
 };
 
+methods.click = function (handler) {
+  loop(this, function (el) {
+    el.onclick = handler;
+  });
+};
+
+methods.append = function (content) {
+  loop(this, function (el) {
+    el.insertAdjacentHTML('beforeend', content);
+  });
+  return this;
+};
+
+// methods.text = function (content) {
+//   if (content !== undefined) {
+//     loop(this, function (el) {
+//       el.textContent = content;
+//     });
+//     return this;
+//   } else {
+//     const res = [];
+//     loop(this, function (el) {
+//       res.push(el.textContent);
+//     });
+//     return res.join(' ');
+//   }
+// };
+
 
 // Allow tests to run on the server (leave at the bottom)
 if (typeof window === 'undefined') {
