@@ -62,6 +62,14 @@ methods.show = function () {
   });
 };
 
+methods.toggle = function () {
+  loop(this, function (el) {
+    const computedDisplay = window.getComputedStyle(el).display;
+    if (computedDisplay === 'none') methods.show.call(el);
+    else methods.hide.call(el);
+  });
+};
+
 
 // Allow tests to run on the server (leave at the bottom)
 if (typeof window === 'undefined') {
